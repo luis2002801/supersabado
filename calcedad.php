@@ -6,9 +6,6 @@
     <title>calculaedad</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
    <header>
@@ -34,21 +31,25 @@
                          <span id="edadcalculada"></span>
                        </span>
                        <?php
-                        function Calculandotiempo($fechainicio,$fechafin){
+                        function Calcularedad($fecha_nacimiento){
                         
-                        $datetime1 = date_create($fechainicio);
-                        $datetime2 = date_create($fechafin);
-                        $interval = date_diff($datetime1,$datetime2);
+                       $dia=date("d");
+                       $mes=date("m");
+                       $ano=date("Y");
                         
-                        $tiempo = array();
-                        foreach ($interval as $valor){
-                          $tiempo[]=$valor;
-                        }
-                        return $tiempo;
-                        
-                        $fechainicio= $_POST['fecha'];
-                        $fechafin=date(Y-m-d);
-                        echo Calculandotiempo($fechainicio,$fechafin)[0];
+                       $dianaz=date("d",strtotime($fecha_nacimiento));
+                       $mesnaz=date("m",strtotime($fecha_nacimiento));
+                       $anonaz=date("Y",strtotime($fecha_nacimiento));
+
+                       if (($mesnaz == $mes) && ($dianaz > $dia)){
+                         $ano=($ano-1); }
+                      
+                        if ($mesnaz > $mres){
+                          $ano=($ano-1);}
+
+                        $edad=($ano-$anonaz);
+                        return $edad;
+                            echo "la edad del jugador es: ".$edad;
                         }
                         ?>
             </div>
@@ -56,22 +57,3 @@
      </div>
 </body>
 </html>
-<script type="text/javascript">
-   $(document).ready(function(){
-      $("#calendario").datepicker({
-      changeMonth: true,
-      changeYear: true,
-      yearRange:'1900:' + 2020,
-      dateFormat: "yy-mm-dd"
-      });
-      $('#calendario').change(function(){
-      $.ajax({
-      type:"post",
-      data:"fecha=" + $('#calendario').val(),
-      success:function(r){
-        $('#edadCalculada'). text(r + "años");
-      }
-    })
-   });
-  });
-</script>

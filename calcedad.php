@@ -33,10 +33,7 @@
                       <span class="label label-success">
                          <span id="edadcalculada"></span>
                        </span>
-                  <button type="submit" class="btn btn-info mt-3 btn-block" name="botonCalcular">CALCULAR</button>
-                        <?php
-                        if(isset($_POST["botonCalcular"]))?>
-                        <?php
+                       <?php
                         function Calculandotiempo($fechainicio,$fechafin){
                         
                         $datetime1 = date_create($fechainicio);
@@ -51,12 +48,30 @@
                         
                         $fechainicio= $_POST['fecha'];
                         $fechafin=date(Y-m-d);
-                        echo Calculandotiempo($fechainicio,$fechafin);
+                        echo Calculandotiempo($fechainicio,$fechafin)[0];
                         }
-                          ?>
-              
+                        ?>
             </div>
-          </div>
-      </div>
+        </div>
+     </div>
 </body>
 </html>
+<script type="text/javascript">
+   $(document).ready(function(){
+      $("#calendario").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange:'1900:' + 2020,
+      dateFormat: "yy-mm-dd"
+      });
+      $('#calendario').change(function(){
+      $.ajax({
+      type:"post",
+      data:"fecha=" + $('#calendario').val(),
+      success:function(r){
+        $('#edadCalculada'). text(r + "años");
+      }
+    })
+   });
+  });
+</script>

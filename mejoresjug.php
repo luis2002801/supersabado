@@ -117,7 +117,7 @@ return $tiempo;
 
 $fechainicio= $_POST['fecha'];
 $fechafin=date(Y-m-d);
-echo Calculandotiempo($fechainicio,$fechafin);
+echo Calculandotiempo($fechainicio,$fechafin)[0];
 }
  ?>   
 </body>

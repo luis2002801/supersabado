@@ -26,46 +26,53 @@
             <div class="row justify-content-center">
                 <div class="col-4">
 
-                <form class="mt-6" action="zapateria.php" method="post" class="text-center">
-                    <h4>Registrar Tu Cantidad De Pares</h4>
-                    <select type="text" name="Cantidad">
-                    <option value="1 par">1 par</option>
-                    <option value="2 pares">2 pares</option>
-                    <option value="3 pares">3 pares</option>
-                    <option value="4 pares">4 pares</option>
-                    <option value="5 pares">5 pares</option>
-                    <option value="6 pares">6 pares</option>
-                    <option value="7 pares">7 pares</option>
-                    <option value="8 pares">8 pares</option>
-                    <option value="9 pares">9 pares</option>
-                    <option value="10 pares">10 pares</option>
-                    <option value="11 pares">11 pares</option>
-                    <option value="12 pares">12 pares</option>
-                </select>
-                <br/><br/>
-                <p>precio final:<input type="text"name="precio"/></p>
-                <p>ingrese el descuento respectivo:
-                    10%: <input type="radio" name = "desc" value="10"/>
-                    20%: <input type="radio" name = "desc" value="20"/>
-                    50%: <input type="radio" name = "desc" value="50"/>
-                </p>
-                <p><input value="Calcular" type="submit"/></p>
-                </form>
+                <form class="mt-3" action="zapateria.php" method="POST">
+                    <h4>Promocion de Zapatos </h4>
+                    <div class="row">
+                        <div class="col">
+                        <input type="text" class="form-control" placeholder="ingrese cantidad" name="cantidad">
+                        </div>
+                        <div class="col">
+                        <input type="number" class="form-control" placeholder="ingrese precio" name="precio">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-info mt-3 btn-block" name="botonCalcular">CALCULAR</button>
+               
                 <?php
+
+                $preciozapatos;
+                $cantidadzapatos;
+                $preciototal;
+                $descuento;
+
                 if(isset($_POST["botonCalcular"])){
-                    $cantidadzapatos = $_POST["zapatos"];
+                    $cantidadzapatos = $_POST["cantidad"];
                     $preciozapatos = $_POST["precio"];
 
                     $preciototal = $preciozapatos*$cantidadzapatos;
+
                     if ($cantidadzapatos==3){
-                        $descuento = ($preciototal*10)/100
-                        $preciototal = $preciozapatos-$descuento;
+                        $descuento = ($preciototal*10)/100;
+                        $preciototal = $preciototal-$descuento;
                         echo ("El valor de la compra total es: ".$preciototal);
-                    }elseif
+                    }elseif($cantidadzapatos >3 && $cantidadzapatos <8){
+                        $descuento= ($preciototal*20)/100;
+                        $preciototal = $preciototal-$descuento;
+                        echo ("el valor de la compra total es: ".$preciototal);
+                    }elseif ($cantidadzapatos>=8){
+                        $descuento= ($preciototal*50)/100;
+                        $preciototal = $preciototal-$descuento;
+                        echo ("el valor de la compra total es: ".$preciototal);  
+                    }else{
+                        echo("usted no tiene descuento");
+                    }
+                    
                 }
                 ?>
+             </form>
      </div>
      </div>
      </div>
+</main>
 </body>
 </html>

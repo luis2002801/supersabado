@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>listado</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -32,7 +33,7 @@ print_r($productos);
             
             <div class="col mb-4">
                <div class="card h-100">
-                 <img src="https://operaciontransformer.com/wp-content/uploads/2019/05/cooking-bananas-1583222_1280-1024x681.jpg" class="card-img-top" alt="...">
+                 <img src="<?php echo($producto["foto"])?>" class="card-img-top" width="100" heigth="1000">
                   <div class="card-body">
                      <h5 class="card-title"><?php echo($producto["nombre"])?></h5>
                      <p class="card-text"><?php echo($producto["descripcion"])?></p>

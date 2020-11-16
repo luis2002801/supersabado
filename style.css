@@ -1,0 +1,11 @@
+.body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#local{
+    background-image: url(proyecto2/imagen2.jpg);
+    background-size: cover;
+    padding-top: 90px;
+    min-height: 600px;
+    color:black;
+}

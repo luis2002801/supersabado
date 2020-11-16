@@ -34,7 +34,7 @@ public function agregarDatos($consultaSQL){
     if($resultado){
         echo("Registro agregado con exito");
     }else{
-        echo ("Error agreganod el registro");
+        echo ("Error agregando el registro");
     }
 
 }

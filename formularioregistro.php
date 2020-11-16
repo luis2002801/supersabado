@@ -10,7 +10,7 @@
 </head>
 <body> 
 
-    <nav class="navbar navbar-light bg-success">
+    <nav class="navbar navbar-light bg-info">
         <a class="navbar-brand" href="#">
         TIENDA EL RAYO
         </a>
@@ -34,9 +34,6 @@
                 <div class="row">
                     <div class="col">
                          <input type="text" class="form-control" placeholder="precio" name="precio">
-                         <label class="form-check-label" for="invalidCheck2">
-                            olvido agregar precio
-                         </label>
                     </div>
                 </div>
                 <div class="row mt-3">

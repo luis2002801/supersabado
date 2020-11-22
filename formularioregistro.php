@@ -15,7 +15,7 @@
         TIENDA EL RAYO
         </a>
     </nav>
-    <section id="muestra">
+    <section id="local">
         <div class="container">
             <main>
                  <div class="container">

@@ -24,7 +24,7 @@ if(isset($_POST["botonEditar"])){
     $transaccion->editarDatos($consultaSQL);
 
     //6.redirrecion
-    header("location:listaproductos");
+    header("location:listaproductos.php");
 
 }
 

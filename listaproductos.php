@@ -67,7 +67,7 @@ print_r($productos);
                                         <label >foto del producto</label>
                                         <input type="url" name="fotoEditar" class="card-img-top" width="100" heigth="1000">
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Editar</button>
+                                    <button type="submit" class="btn btn-primary" name="botonEditar">Editar</button>
                                 </form>
                             </div>
                         </div>

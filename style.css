@@ -2,10 +2,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-#local{
+#muestra{
     background-image: url(proyecto2/imagen1.jpg);
     background-size: cover;
-    padding-top: 90px;
-    min-height: 600px;
-    color:black;
+    padding-top: 100px;
+    min-height: 900px;
+    color: blue;
 }

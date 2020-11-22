@@ -64,5 +64,20 @@ public function eliminarDatos($consultaSQL){
     }
     
 }
+public function editarDatos($consultaSQL){
+   // 1. conectarme ala BD
+   $conexionBD=$this->conectarBD();
+   // 2. preparar la consulta
+   $consultaEditarDatos= $conexionBD->prepare($consultaSQL);
+   //3. ejecutar la consulta
+   $resultado=$consultaEditarDatos->execute();
+   //4. verifique el resultado
+   if($resultado){
+       echo("Registro editando con exito");
+   }else{
+       echo ("Error editando el registro");
+   }
+
+}
 }
 ?>

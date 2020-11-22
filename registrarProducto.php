@@ -17,7 +17,7 @@ $transaccion= new BaseDatos();
 
 
 //3. crear la consulta SQL para agregar datos
-$consultaSQL="INSERT INTO productos(nombre, marca, precio,descripcion,foto) VALUES ('$nombre','$marca','$precio','$descripcion''$foto')";
+$consultaSQL="INSERT INTO productos(nombre, marca, precio,descripcion,foto) VALUES ('$nombre','$marca','$precio','$descripcion','$foto')";
 //4.llamar al metodo agregarDatos
 $transaccion->agregarDatos($consultaSQL);
 

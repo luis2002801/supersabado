@@ -8,6 +8,11 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-light bg-info">
+        <a class="navbar-brand" href="#">
+        TIENDA EL RAYO
+        </a>
+    </nav>
 
 <?php
 //hacer una consulta en BD para tener todos los usuarios

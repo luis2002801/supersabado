@@ -25,7 +25,7 @@ $consultaSQL="SELECT * FROM productos WHERE 1";
 $transaccion=new BaseDatos();
 $productos=$transaccion->buscarDatos($consultaSQL);
 
-print_r($productos);
+//print_r($productos);
 ?>
 <section id="local">
 <div class="container">
